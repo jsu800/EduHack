@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100" >
+
+    <LinearLayout
+        android:id="@+id/imageViewLayoutTopRight"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <ImageView
+            android:id="@+id/imageViewTop5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:src="@drawable/mosaic_image_top5" />
+
+        <ImageView
+            android:id="@+id/imageViewTop6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:src="@drawable/mosaic_image_top6" />
+
+        <ImageView
+            android:id="@+id/imageViewTop7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:src="@drawable/mosaic_image_top7" />
+
+        <ImageView
+            android:id="@+id/imageViewTop8"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:src="@drawable/mosaic_image_top8" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="100"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <VideoView
+            android:id="@+id/imageViewCenter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="90" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:background="#00000000" >
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/imageViewLayoutBottomRight"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0"
+        android:orientation="horizontal"
+        android:weightSum="100" >
+
+        <ImageView
+            android:id="@+id/imageViewBottom5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:src="@drawable/mosaic_image_bottom5" />
+
+        <ImageView
+            android:id="@+id/imageViewBottom6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:src="@drawable/mosaic_image_bottom6" />
+
+        <ImageView
+            android:id="@+id/imageViewBottom7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:src="@drawable/mosaic_image_bottom7" />
+
+        <ImageView
+            android:id="@+id/imageViewBottom8"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="25"
+            android:src="@drawable/mosaic_image_bottom8" />
+    </LinearLayout>
+
+</LinearLayout>

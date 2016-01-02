@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.josephsu.edu"
+    android:versionCode="22"
+    android:versionName="2.2" >
+
+    <application
+        android:icon="@drawable/logo_carcierge"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        <activity
+            android:name="com.josephsu.edu.MainActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+            </activity>
+        <activity
+            android:name="com.josephsu.edu.ImageMosaicContinuityView"
+            android:label="Image Continuity View"
+            android:screenOrientation="landscape" />
+                
+        <activity
+            android:name="com.josephsu.edu.DiagnosticActivity"
+            android:label="Car Diagnostic View"
+            android:screenOrientation="landscape" />
+        </application>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="19" />
+
+</manifest>
