@@ -16,7 +16,7 @@
         android:screenOrientation="landscape"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         <activity
-            android:name="com.teamme.LoginView"
+            android:name="com.teamme.MainActivity"
             android:configChanges="keyboardHidden|orientation"
             android:label="@string/app_name"
             android:screenOrientation="landscape" >
@@ -30,19 +30,13 @@
             android:name="com.teamme.QuestionView"
             android:label="Question View"
             android:screenOrientation="landscape" />
-        
         <activity
             android:name="com.teamme.ImageMosaicContinuityView"
             android:label="Image Continuity View"
             android:screenOrientation="landscape" />
-        
         <activity
             android:name="com.teamme.ThumbnailMosaicViewLEFT"
             android:label="Thumbnail Continuity LEFT View"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name="com.teamme.DiagnosticActivity"
-            android:label="Car Diagnostic View"
             android:screenOrientation="landscape" />
 
         <!-- SmiSdk Intent Service required for all APIs -->

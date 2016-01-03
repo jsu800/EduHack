@@ -22,12 +22,17 @@ public class QuestionView extends Activity {
 	private AlertDialog mAlert;
 	private View mToastView;
 	private Handler mHandler;
-	private AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
-	private LayoutInflater mInflater = (LayoutInflater) getContext()
+	private AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainApplication.getAppContext());
+	private LayoutInflater mInflater = (LayoutInflater) MainApplication.getAppContext()
 			.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	private WindowManager.LayoutParams mWindowsManager;
 	private Message mMsg = new Message();
 
+	public QuestionView() {
+		super();		
+	}
+	
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -46,7 +51,7 @@ public class QuestionView extends Activity {
 					public void onClick(DialogInterface dialog, int item) {
 
 						if (items[item] != "Dog") {
-							Toast.makeText(getContext(), "WRONG! Try Again!",
+							Toast.makeText(MainApplication.getAppContext(), "WRONG! Try Again!",
 									Toast.LENGTH_SHORT).show();
 						} else {
 							buildCorrectToast("Yes it is a DOG!");
@@ -73,7 +78,7 @@ public class QuestionView extends Activity {
 		TextView text = (TextView) mToastView.findViewById(R.id.text);
 		text.setText(message);
 
-		Toast toast = new Toast(getContext());
+		Toast toast = new Toast(MainApplication.getAppContext());
 		toast.setGravity(Gravity.CENTER_VERTICAL, 600, 100);
 		toast.setDuration(Toast.LENGTH_LONG);
 		toast.setView(mToastView);

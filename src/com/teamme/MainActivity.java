@@ -1,22 +1,6 @@
 package com.teamme;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
-import com.datami.smi.SdStateChangeListener;
-import com.datami.smi.SmiResult;
-import com.datami.smi.SmiSdk;
-
 import android.app.Activity;
-import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -27,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class MainActivity extends Activity implements AnimationListener,
-		Constants, SdStateChangeListener {
+		Constants {
 
 	private static final String TAG = "MainActivity";
 
@@ -48,9 +32,9 @@ public class MainActivity extends Activity implements AnimationListener,
 		Log.i(TAG, "called onCreate");
 		super.onCreate(savedInstanceState);
 
-		SmiSdk.getAppSDAuth(
-				"dmi-att-hack-68fcfe5e708bfaa3806c4888912ea6f2ecb446fd", this,
-				null, R.drawable.ic_green, true);
+		// SmiSdk.getAppSDAuth(
+		// "dmi-att-hack-68fcfe5e708bfaa3806c4888912ea6f2ecb446fd", this,
+		// null, R.drawable.ic_green, true);
 
 		setContentView(R.layout.login_layout);
 
@@ -60,68 +44,6 @@ public class MainActivity extends Activity implements AnimationListener,
 		// startActivity(intent);
 		// finish();
 		//
-
-	}
-
-	private class LoadActivityASYNC extends AsyncTask<String, Void, String> {
-
-		@Override
-		protected String doInBackground(String... params) {
-
-			for (int i = 0; i < 5; i++) {
-				GET("http://www.att.com");
-			}
-			return null;
-		}
-
-	}
-
-	public static String GET(String url) {
-
-		System.out.println("HTTP GET ...");
-
-		InputStream inputStream = null;
-		String result = "";
-		try {
-
-			// create HttpClient
-			HttpClient httpclient = new DefaultHttpClient();
-
-			// make GET request to the given URL
-			HttpResponse httpResponse = httpclient.execute(new HttpGet(url));
-
-			// receive response as inputStream
-			inputStream = httpResponse.getEntity().getContent();
-
-			// convert inputstream to string
-			if (inputStream != null) {
-				result = convertInputStreamToString(inputStream);
-				System.out.println("HTTP GET WORKS!");
-			} else
-				System.out.println("HTTP GET DID NOT WORK!");
-
-		} catch (Exception e) {
-			Log.i("InputStream", e.getLocalizedMessage());
-			System.out.println("InputStream" + e.getLocalizedMessage());
-		}
-
-		System.out.println(result);
-
-		return result;
-	}
-
-	// convert inputstream to String
-	private static String convertInputStreamToString(InputStream inputStream)
-			throws IOException {
-		BufferedReader bufferedReader = new BufferedReader(
-				new InputStreamReader(inputStream));
-		String line = "";
-		String result = "";
-		while ((line = bufferedReader.readLine()) != null)
-			result += line;
-
-		inputStream.close();
-		return result;
 
 	}
 
@@ -167,17 +89,6 @@ public class MainActivity extends Activity implements AnimationListener,
 	@Override
 	public void onAnimationEnd(Animation animation) {
 		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onChange(SmiResult result) {
-		// TODO Auto-generated method stub
-
-		System.out.println("==================== " + result.getSdState());
-
-		LoadActivityASYNC task = new LoadActivityASYNC();
-		task.execute();
 
 	}
 
