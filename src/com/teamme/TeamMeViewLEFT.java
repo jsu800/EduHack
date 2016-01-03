@@ -67,13 +67,14 @@ public class TeamMeViewLEFT extends Activity {
 
 			// wait 3 seconds then go ...
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(2000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
-			Message msg = new Message();			
+			Message msg = new Message();	
+			msg.obj = "DONE";
 			mHandler.sendMessage(msg);
 
 			return null;
