@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.josephsu.edu"
+    package="com.teamme"
     android:versionCode="22"
     android:versionName="2.2" >
 
+    <!-- SmiSdk Required Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
+        android:name="MainApplication"
+        android:configChanges="keyboardHidden|orientation"
         android:icon="@drawable/logo_carcierge"
         android:label="@string/app_name"
+        android:screenOrientation="landscape"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         <activity
-            android:name="com.josephsu.edu.MainActivity"
+            android:name="com.teamme.LoginView"
             android:configChanges="keyboardHidden|orientation"
             android:label="@string/app_name"
             android:screenOrientation="landscape" >
@@ -18,18 +25,35 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
-            </activity>
+        </activity>
         <activity
-            android:name="com.josephsu.edu.ImageMosaicContinuityView"
+            android:name="com.teamme.QuestionView"
+            android:label="Question View"
+            android:screenOrientation="landscape" />
+        
+        <activity
+            android:name="com.teamme.ImageMosaicContinuityView"
             android:label="Image Continuity View"
             android:screenOrientation="landscape" />
-                
+        
         <activity
-            android:name="com.josephsu.edu.DiagnosticActivity"
+            android:name="com.teamme.ThumbnailMosaicViewLEFT"
+            android:label="Thumbnail Continuity LEFT View"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.teamme.DiagnosticActivity"
             android:label="Car Diagnostic View"
             android:screenOrientation="landscape" />
-        </application>
+
+        <!-- SmiSdk Intent Service required for all APIs -->
+        <service android:name="com.datami.smi.SmiIntentService" />
+
+        <receiver android:name="com.datami.smi.NetworkChangeReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+    </application>
 
     <supports-screens
         android:anyDensity="true"
