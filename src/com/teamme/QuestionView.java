@@ -37,12 +37,12 @@ public class QuestionView extends Activity implements Constants {
 	private Message mMsg = new Message();
 
 	CharSequence[] items = null;
-	CharSequence[] itemsRIGHT = { "K", "F", "O", "W" };
-	CharSequence[] itemsLEFT = { "H2", "N2", "O2", "K2" };
+	CharSequence[] itemsRIGHT = { "O (oxygen)", "K (potassium)", "Na (sodium)", "He (helium)" };
+	CharSequence[] itemsLEFT = { "H2 (hydrogen gas)", "N2 (nitrogen gas)", "He (helium gas)", "F2 (fluorine gas)" };
 
 	String question = null;
-	String questionRIGHT = "This element is very flammable and is found in the air we breathe:";
-	String questionLEFT = "What gas is comprised of the most abundant element in the universe?";
+	String questionRIGHT = "This element is found in the air we breathe and is VERY flammable";
+	String questionLEFT = "What is the most abundant gas in the universe?";
 
 	public QuestionView() {
 		super();
@@ -77,8 +77,8 @@ public class QuestionView extends Activity implements Constants {
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int item) {
 
-						if ((isLEFT && items[item] != "H2") || (!isLEFT
-								&& items[item] != "O")) {
+						if ((isLEFT && items[item] != "H2 (hydrogen gas)") || (!isLEFT
+								&& items[item] != "O (oxygen)")) {
 							Toast.makeText(QuestionView.this,
 									"WRONG! Try Again!", Toast.LENGTH_SHORT)
 									.show();
@@ -131,7 +131,7 @@ public class QuestionView extends Activity implements Constants {
 		protected String doInBackground(String... params) {
 
 			try {
-				Thread.sleep(2000);
+				Thread.sleep(4000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

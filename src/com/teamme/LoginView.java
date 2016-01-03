@@ -29,8 +29,18 @@ public class LoginView extends Activity implements Constants {
 
 			@Override
 			public void onClick(View v) {
-				System.out.println("TopicView");
-				Intent intent = new Intent(LoginView.this, QuestionView.class);
+				
+				Intent intent = null;
+				
+				if (isLEFT) {
+					
+					intent = new Intent(LoginView.this, TopicViewLEFT.class);
+					
+				} else {
+					
+					intent = new Intent(LoginView.this, TopicViewRIGHT.class);					
+				}
+								
 				startActivity(intent);
 				finish();
 			}

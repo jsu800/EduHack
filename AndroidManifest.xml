@@ -27,6 +27,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.teamme.TopicViewLEFT"
+            android:label="Topic View Left"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.teamme.TopicViewRIGHT"
+            android:label="Topic View Right"
+            android:screenOrientation="landscape" />
+        <activity
             android:name="com.teamme.QuestionView"
             android:label="Question View"
             android:screenOrientation="landscape" />
@@ -37,6 +45,10 @@
         <activity
             android:name="com.teamme.TeamMeViewRIGHT"
             android:label="TeamMeView right"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.teamme.VideoHalfContinuityView"
+            android:label="Video Half Continuity View"
             android:screenOrientation="landscape" />
         <activity
             android:name="com.teamme.ImageMosaicContinuityView"
