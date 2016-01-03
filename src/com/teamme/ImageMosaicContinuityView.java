@@ -217,7 +217,7 @@ public class ImageMosaicContinuityView extends Activity implements
 		mVideoView = (VideoView) findViewById(R.id.imageViewCenter);
 		mVideoView.setMediaController(new MediaController(this));
 		Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
-				+ R.raw.aurelio_casillas);
+				+ R.raw.water_drop);
 		mVideoView.setVideoURI(video);
 
 		if (isLEFT) {
