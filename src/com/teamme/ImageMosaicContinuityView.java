@@ -76,19 +76,24 @@ public class ImageMosaicContinuityView extends Activity implements
 
 		if (isLEFT) {
 
-			setContentView(R.layout.movie_mosaic_view_left);
-			// enableAccSensors();
-			loadImageViews();
-			loadVideo();
-			loadThumbnailTransitions();
-			startThumbnailTransitions();
+			setContentView(R.layout.thumbnail_movie_mosaic_view_left);
 
-		} else {
+//			setContentView(R.layout.movie_mosaic_view_left);
+			// enableAccSensors();
+
+		}
+		else {
 
 			setContentView(R.layout.thumbnail_movie_mosaic_view_right);
-			loadImageViews();
-			loadVideo();
+//			loadImageViews();
+//			loadVideo();
 		}
+
+		loadImageViews();
+		loadVideo();
+		loadThumbnailTransitions();
+		startThumbnailTransitions();
+
 	}
 
 	private void startThumbnailTransitions() {
@@ -169,41 +174,41 @@ public class ImageMosaicContinuityView extends Activity implements
 			mThumbnailTopLayout = (LinearLayout) findViewById(R.id.imageViewLayoutTopRight);
 			mThumnailBottomLayout = (LinearLayout) findViewById(R.id.imageViewLayoutBottomRight);
 
-			mThumbnailTopLayout.setVisibility(View.INVISIBLE);
-			mThumnailBottomLayout.setVisibility(View.INVISIBLE);
+//			mThumbnailTopLayout.setVisibility(View.INVISIBLE);
+//			mThumnailBottomLayout.setVisibility(View.INVISIBLE);
 
 			// HACK add click listener to the 8th image
-			mImageHack = (ImageView) findViewById(R.id.imageViewInvisible);
-			loadThumbnailTransitions();
-			mImageHack.setClickable(true);
-			mImageHack.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					System.out.println("mImageHack");
-
-					if (isFirstClick) {
-						isFirstClick = false;
-						mThumbnailTopLayout.setVisibility(View.VISIBLE);
-						mThumnailBottomLayout.setVisibility(View.VISIBLE);
-						startThumbnailTransitions();
-
-						// LoadTransitionASYNC task = new LoadTransitionASYNC();
-						// task.execute();
-					}
-				}
-			});
-
-			// telemundo button to set off another activity
-			mImageMosaicViewTop8.setOnClickListener(new OnClickListener() {
-
-				@Override
-				public void onClick(View v) {
-					System.out.println("mImageMosaicViewTop8");
-					LoadActivityASYNC task = new LoadActivityASYNC();
-					task.execute();
-				}
-			});
+//			mImageHack = (ImageView) findViewById(R.id.imageViewInvisible);
+//			loadThumbnailTransitions();
+//			mImageHack.setClickable(true);
+//			mImageHack.setOnClickListener(new OnClickListener() {
+//
+//				@Override
+//				public void onClick(View v) {
+//					System.out.println("mImageHack");
+//
+//					if (isFirstClick) {
+//						isFirstClick = false;
+//						mThumbnailTopLayout.setVisibility(View.VISIBLE);
+//						mThumnailBottomLayout.setVisibility(View.VISIBLE);
+//						startThumbnailTransitions();
+//
+//						// LoadTransitionASYNC task = new LoadTransitionASYNC();
+//						// task.execute();
+//					}
+//				}
+//			});
+//
+//			// telemundo button to set off another activity
+//			mImageMosaicViewTop8.setOnClickListener(new OnClickListener() {
+//
+//				@Override
+//				public void onClick(View v) {
+//					System.out.println("mImageMosaicViewTop8");
+//					LoadActivityASYNC task = new LoadActivityASYNC();
+//					task.execute();
+//				}
+//			});
 
 		}
 
