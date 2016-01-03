@@ -26,10 +26,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.teamme.QuestionView"
             android:label="Question View"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.teamme.TeamMeViewLEFT"
+            android:label="TeamMeView left"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.teamme.TeamMeViewRIGHT"
+            android:label="TeamMeView right"
             android:screenOrientation="landscape" />
         <activity
             android:name="com.teamme.ImageMosaicContinuityView"

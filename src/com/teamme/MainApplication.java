@@ -63,15 +63,15 @@ public class MainApplication extends Application implements
 			System.out.println(">>> sdReason: " + currentSdState.getSdReason());
 		} else {
 
-			LoadActivityASYNC task = new LoadActivityASYNC();
-			task.execute();
-
 			
 			if (isRealApp) {
 				// Activate the Login Intent from here then on
 				Intent intent = new Intent(MainApplication.this,
 						LoginView.class);
 				startActivity(intent);		
+			} else {
+				LoadActivityASYNC task = new LoadActivityASYNC();
+				task.execute();				
 			}
 
 

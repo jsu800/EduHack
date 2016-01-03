@@ -92,51 +92,5 @@ public class MainActivity extends Activity implements AnimationListener,
 
 	}
 
-	// private void buildQuestion() {
-	// final CharSequence[] items = { "Cat", "Mouse", "Human", "Dog" };
-	//
-	// mToastView = mInflater.inflate(R.layout.toast,
-	// (ViewGroup) findViewById(R.id.toast_layout_root));
-	//
-	// mBuilder.setTitle("What is this animal?");
-	// mBuilder.setSingleChoiceItems(items, -1,
-	// new DialogInterface.OnClickListener() {
-	// public void onClick(DialogInterface dialog, int item) {
-	//
-	// if (items[item] != "Dog") {
-	// Toast.makeText(getContext(), "WRONG! Try Again!",
-	// Toast.LENGTH_SHORT).show();
-	// } else {
-	// buildCorrectToast("Yes it is a DOG!");
-	// }
-	// }
-	// });
-	//
-	// mAlert = mBuilder.create();
-	// mAlert.requestWindowFeature(Window.FEATURE_NO_TITLE);
-	// mWindowsManager = mAlert.getWindow().getAttributes();
-	// mWindowsManager.gravity = Gravity.CENTER_VERTICAL | Gravity.RIGHT;
-	// mWindowsManager.x = 100; // x position
-	// mAlert.show();
-	// }
-	//
-	// private void buildCorrectToast(String message) {
-	//
-	// // HACK - setting x to way off to make it "disappear" for now
-	// // TODO: how to make dismiss the alert box permenantly? Not in the UI
-	// // thread?
-	// mWindowsManager.x = 1000; // x position
-	// mAlert.dismiss();
-	//
-	// TextView text = (TextView) mToastView.findViewById(R.id.text);
-	// text.setText(message);
-	//
-	// Toast toast = new Toast(getContext());
-	// toast.setGravity(Gravity.CENTER_VERTICAL, 600, 100);
-	// toast.setDuration(Toast.LENGTH_LONG);
-	// toast.setView(mToastView);
-	// toast.show();
-	//
-	// }
 
 }
