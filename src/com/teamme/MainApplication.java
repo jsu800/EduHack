@@ -71,7 +71,7 @@ public class MainApplication extends Application implements
 				// Activate the Login Intent from here then on
 				Intent intent = new Intent(MainApplication.this,
 						LoginView.class);
-				startActivity(intent);				
+				startActivity(intent);		
 			}
 
 
