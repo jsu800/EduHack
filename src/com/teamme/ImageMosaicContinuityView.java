@@ -226,19 +226,21 @@ public class ImageMosaicContinuityView extends Activity implements
 		mVideoView.setVideoURI(video);
 
 		if (isLEFT) {
-			lp.setMargins(0, 0, 0, 0);
+			lp.setMargins(400, 0, -400, 0);
+
 		} else {
-			lp.setMargins(0, 0, 0, 0);
+			lp.setMargins(-640, 0, 640, 0);
+
 		}
+
 		mVideoView.setLayoutParams(lp);
 
-		// for RIGHT device we will start only after the bump
-		if (isLEFT)
-			mVideoView.start();
-		else {
-			splitVideo();
-		}
+		mVideoView.start();
 
+//		mThumbnailTopLayout.setVisibility(View.GONE);
+//		mThumnailBottomLayout.setVisibility(View.GONE);
+
+		
 		mVideoView.setClickable(true);
 		mVideoView.setOnTouchListener(new OnTouchListener() {
 			@Override
